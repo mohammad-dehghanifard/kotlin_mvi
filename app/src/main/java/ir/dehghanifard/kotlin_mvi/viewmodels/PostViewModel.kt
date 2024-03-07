@@ -21,6 +21,10 @@ class PostViewModel : ViewModel(),ContainerHost<PostState,UiComponent>{
 
     private val postService = PostService(PostApi.providePostApi())
 
+    init {
+        getPosts()
+    }
+
     fun getPosts() {
         intent {
             val posts = postService.getPosts()
